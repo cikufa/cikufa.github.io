@@ -1,7 +1,5 @@
 # Shekoufeh Sadeghi — Personal Academic Website
 
-Static GitHub Pages website modeled after the structure and visual language of https://kartikeya13.github.io/.
-
 ## Files
 - `index.html` — complete single-page website with embedded CSS
 - `assets/profile.jpeg` — profile photo
