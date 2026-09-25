@@ -1,0 +1,240 @@
+
+\documentclass[10.5pt,letterpaper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=0.58in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+
+% ---------- ATS / PDF text extraction ----------
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% ---------- Styling ----------
+\definecolor{accent}{RGB}{34,91,122}
+\definecolor{placeholder}{RGB}{110,110,110}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}{}
+  [\vspace{-5pt}\rule{\textwidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+\setlist[itemize]{
+  leftmargin=0.16in,
+  itemsep=1.5pt,
+  topsep=1.5pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% ---------- Commands ----------
+\newcommand{\todo}[1]{\textcolor{placeholder}{[#1]}}
+
+\newcommand{\resumeSubheading}[4]{
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}
+  \vspace{-2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & #2
+  \end{tabularx}
+  \vspace{-3pt}
+}
+
+\newcommand{\resumePub}[3]{
+  \textbf{#1} #2 \hfill #3\\[-1pt]
+}
+
+\newcommand{\resumeItem}[1]{\item \small #1}
+
+\begin{document}
+
+% ============================================================
+% Header
+% ============================================================
+\begin{center}
+    {\LARGE \textbf{Shekoufeh Sadeghi}}\\[3pt]
+    \small
+    Ph.D. Candidate in Computer Science $\mid$ Robotics, Active Perception, Computer Vision\\[3pt]
+    Buffalo, NY $\mid$
+    \href{mailto:shekoufe@buffalo.edu}{shekoufe@buffalo.edu} $\mid$
+    \todo{US phone}\\[2pt]
+    \href{https://www.linkedin.com/in/shekoufeh-sadeghi-45100a1ba/}{LinkedIn} $\mid$
+    \href{https://github.com/cikufa}{GitHub} $\mid$
+    \href{https://scholar.google.com/citations?hl=en&user=NCCK7doAAAAJ}{Google Scholar}
+    $\mid$ \todo{personal website / project page}
+\end{center}
+
+\vspace{-5pt}
+
+% ============================================================
+\section{Research Focus}
+\small
+Active perception and perception-aware planning for robot autonomy; 3D vision and visual localization;
+learning and optimization for sensing under real-world constraints; robot learning and long-horizon manipulation.
+\todo{Tailor this line per internship: field robotics vs.\ manipulation vs.\ CV/ML.}
+
+% ============================================================
+\section{Education}
+
+\resumeSubheading
+{University at Buffalo, SUNY}{Buffalo, NY}
+{Ph.D. in Computer Science; Advisor: Prof.\ Karthik Dantu}{2023 -- Present}
+\begin{itemize}
+    \resumeItem{Research in the DRONES Lab on active perception, robot vision, and perception-aware autonomy.}
+    \resumeItem{\todo{Expected graduation date}; \todo{Ph.D. GPA only if you want it shown}.}
+\end{itemize}
+
+\resumeSubheading
+{K.N. Toosi University of Technology}{Tehran, Iran}
+{B.Sc. in Computer Engineering}{2017 -- 2022}
+\begin{itemize}
+    \resumeItem{Undergraduate research in computer vision, reinforcement learning, and generative models.}
+    % Do not add the 3.32/4 GPA to the internship resume unless an application explicitly asks for it.
+\end{itemize}
+
+% ============================================================
+\section{Research Experience}
+
+\resumeSubheading
+{DRONES Lab, University at Buffalo}{Buffalo, NY}
+{Graduate Researcher / Research Project Assistant}{2023 -- Present}
+
+\resumeProjectHeading
+{On-Manifold Active View Optimization for Motion-Decoupled Cameras}
+{\todo{2023/2024 -- Present}}
+\begin{itemize}
+    \resumeItem{Developed an online optimization method on $SO(3)$ for orienting motion-decoupled cameras to maximize task-relevant visual feature visibility while the robot follows a fixed translational trajectory.}
+    \resumeItem{Built simulation and real-robot evaluation pipelines using ROS, C++/Python, COLMAP, Unreal/Isaac simulation, and a Boston Dynamics Spot equipped with a RealSense D455.}
+    \resumeItem{Public project results report $\sim$460\,ms optimization time for $\sim$15k features versus up to 90\,s brute-force search, and 99.04\% feature-registration success versus 70.48\% without optimized viewing. \todo{Verify these numbers against the final paper before submitting}.}
+    \resumeItem{Extended perception-aware planning experiments to compare visibility optimization with map-based information objectives and localization baselines. \todo{Add your strongest final quantitative localization result}.}
+\end{itemize}
+
+\resumeProjectHeading
+{Adaptive Illumination Control for Robot Perception (Lightning)}
+{2025 -- 2026}
+\begin{itemize}
+    \resumeItem{Co-authored a closed-loop illumination-control framework for visual SLAM that combines learned relighting, offline intensity scheduling, and imitation learning for online light control.}
+    \resumeItem{\todo{Replace with your specific contribution: e.g., data collection, CLID experiments, robot evaluation, SLAM evaluation, implementation, analysis}.}
+    \resumeItem{\todo{Add one quantitative result that directly reflects your contribution, not only the paper's overall result}.}
+\end{itemize}
+
+% This block is intentionally included because it is highly relevant to the labs you named.
+% Keep it only if this is a real, active project you are ready to discuss in interviews.
+\resumeProjectHeading
+{Task-Aware Active Perception for Long-Horizon Manipulation (Ongoing)}
+{2026 -- Present}
+\begin{itemize}
+    \resumeItem{Investigating view planning for manipulation that prioritizes task-relevant object-part visibility and action/skill feasibility rather than generic information gain.}
+    \resumeItem{Exploring learned reachability / affordance models and backward or goal-conditioned planning to select useful intermediate sensing states for long-horizon tasks.}
+    \resumeItem{\todo{Add simulator/robot (e.g., UR5 + Robotiq 85), benchmark, concrete implementation status, and first result once available}.}
+\end{itemize}
+
+\resumeSubheading
+{Institute for Research in Fundamental Sciences (IPM)}{Tehran, Iran}
+{Research Intern -- GameGAN Reimplementation and Improvement}{Jul 2021 -- Dec 2021}
+\begin{itemize}
+    \resumeItem{Reimplemented a GameGAN data pipeline and model; modified network/input architecture and debugged legacy dependencies, Gym environments, and CMake build issues.}
+\end{itemize}
+
+% ============================================================
+\section{Selected Publications}
+
+\resumePub
+{\textbf{S. Sadeghi}, Y. Turkar, and K. Dantu.}
+{\href{https://arxiv.org/abs/2602.15900}{``Adaptive Illumination Control for Robot Perception.''}
+\textit{arXiv preprint}, 2026.}
+{}
+
+\vspace{3pt}
+\resumePub
+{D. Oliva, A. Olszewski, \textbf{S. Sadeghi}, K. Dantu, and D. Feil-Seifer.}
+{\href{https://doi.org/10.3389/frobt.2025.1646880}{``Designing Socially Assistive Robots for Clinical Practice: Insights from an Asynchronous Remote Community of Speech-Language Pathologists.''}
+\textit{Frontiers in Robotics and AI}, 2025.}
+{}
+
+\vspace{3pt}
+\resumePub
+{S. Milani, A. Momtaz, S. Amini, K. Amini, \textbf{S. Sadeghi}, E. Qoreishi, and S. Haddadian.}
+{\href{https://doi.org/10.37256/cm.3120221151}{``A Mathematical Approach Towards Random Road Profile Generation Based on Chaotic Signals of Chua's Circuit.''}
+\textit{Contemporary Mathematics}, 2022.}
+{}
+
+\vspace{3pt}
+\resumePub
+{\textbf{S. Sadeghi}.}
+{``Maximizing Feature Visibility by Online On-Manifold Optimization for Motion-Decoupled Cameras.'' 
+Northeast Robotics Colloquium (NERC) poster, 2024. \todo{Add manuscript status / coauthors / venue if submitted}.}
+{}
+
+% ============================================================
+\section{Technical Skills}
+
+\small
+\textbf{Programming:} Python, C++, C, \todo{CUDA if interview-ready}; Git, CMake, Linux, Docker\\
+\textbf{Robotics / Perception:} ROS, ROS2, OpenCV, COLMAP, visual localization / SLAM, Eigen, Ceres, OMPL, RRT$^\ast$, trajectory optimization\\
+\textbf{ML / Scientific Computing:} PyTorch, TensorFlow, Keras, NumPy, SciPy, scikit-learn, Pandas, Matplotlib\\
+\textbf{Simulation / Hardware:} NVIDIA Isaac Sim, Unreal Engine / UnrealCV, \todo{Gazebo if current}, Boston Dynamics Spot, Intel RealSense D455, \todo{UR5 + Robotiq 85 if you have hands-on experience}\\
+\textbf{Other:} LaTeX, \todo{Jetson / Orin if you have deployed on it}, \todo{Open3D / PyTorch3D / JAX only if actually used}
+
+% ============================================================
+\section{Teaching \& Mentoring}
+
+\resumeSubheading
+{University at Buffalo}{Buffalo, NY}
+{Teaching Assistant, CSE 4/568 Robotics Algorithms}{\todo{semester(s)}}
+\begin{itemize}
+    \resumeItem{\todo{Add 1 strong line: ROS2/simulation assignments, office hours, grading, lab support, number of students}.}
+\end{itemize}
+
+% Older TA roles are intentionally condensed for a research-internship resume.
+\resumeSubheading
+{K.N. Toosi University of Technology}{Tehran, Iran}
+{Lead Teaching Assistant -- Computer Vision; Embedded System Design}{2021 -- 2022}
+\begin{itemize}
+    \resumeItem{Led lab/workshop instruction, assignment design and grading, and coordination of teaching assistants.}
+\end{itemize}
+
+% ============================================================
+% OPTIONAL SECTIONS -- uncomment only for a specific application
+% ============================================================
+
+% \section{Selected Earlier Projects}
+% \resumeProjectHeading{Actor-Critic Autonomous Vehicle Lateral Control}{2021 -- 2022}
+% \begin{itemize}
+%   \resumeItem{Implemented an actor-critic reinforcement-learning approach for vehicle lateral control.}
+% \end{itemize}
+%
+% \resumeProjectHeading{Satellite Cloud Image Generation with DCGAN}{2021 -- 2022}
+% \begin{itemize}
+%   \resumeItem{Generated satellite cloud imagery with DCGANs and evaluated results with FID, SSIM, and a human study.}
+% \end{itemize}
+%
+% Use these mainly for Adobe / Meta / Samsung CV/ML variants if they help match the job description.
+
+% \section{Honors}
+% \small
+% Ranked in the top 0.3\% of the Iranian National University Entrance Exam.\\
+% \todo{Add current Ph.D.-level awards/fellowships first, if any.}
+
+\end{document}

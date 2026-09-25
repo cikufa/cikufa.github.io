@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shekoufeh Sadeghi — Ph.D. candidate in Computer Science at the University at Buffalo working on active perception, robot vision, and perception-aware planning.">
+  <meta name="keywords" content="Shekoufeh Sadeghi, robotics, active perception, computer vision, robot learning, viewpoint optimization, visual localization, University at Buffalo, DRONES Lab">
+  <meta property="og:title" content="Shekoufeh Sadeghi">
+  <meta property="og:description" content="Robotics researcher working on active perception, perception-aware planning, robot vision, and manipulation under partial observability.">
+  <meta property="og:image" content="assets/profile.jpeg">
+  <title>Shekoufeh Sadeghi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: #e8e8e8; }
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.76;
+      color: #111;
+      background: #fafafa;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+      box-shadow: 0 0 0 1px #ddd, 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    a { color: #1a0dab; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 1.6rem 0; }
+
+    #topnav {
+      font-size: 0.88rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    #topnav a { margin-right: 0.15rem; }
+
+    #header {
+      display: grid;
+      grid-template-columns: 215px 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+    #header img {
+      width: 100%;
+      height: 275px;
+      object-fit: cover;
+      object-position: center 32%;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    #header h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 0.08rem;
+      line-height: 1.25;
+    }
+    .role {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.9rem;
+      font-family: Georgia, serif;
+    }
+    .affil { font-size: 0.97rem; margin-bottom: 0.35rem; line-height: 1.48; }
+    .email { font-size: 0.88rem; color: #444; margin: 0.75rem 0 0.45rem; }
+    .hlinks { font-size: 0.88rem; line-height: 1.7; }
+    .hlinks a { margin-right: 0.45rem; }
+
+    h2 { font-size: 1.42rem; font-weight: 400; margin: 1.9rem 0 0.8rem; }
+    h3 { font-size: 1rem; font-weight: 600; margin: 1.4rem 0 0.4rem; }
+    p { margin-bottom: 0.72rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .news-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 0.7rem;
+      padding: 0.52rem 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.94rem;
+    }
+    .news-row:first-child { border-top: 1px solid #eee; }
+    .ndt { font-size: 0.81rem; color: #888; padding-top: 0.2rem; }
+
+    .pub-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1.4rem;
+      padding: 1.28rem 0;
+      border-bottom: 1px solid #eee;
+      align-items: start;
+    }
+    .pub-row:first-child { border-top: 1px solid #eee; }
+    .pub-row img, .pub-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      background: #f0f0f0;
+      display: block;
+    }
+    .text-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.8rem;
+      color: #333;
+      background: linear-gradient(135deg, #f1f1f1, #dfdfdf);
+    }
+    .text-thumb span { font-size: 1.45rem; letter-spacing: 0.06em; }
+    .text-thumb small { font-size: 0.72rem; color: #777; line-height: 1.2; margin-top: 0.25rem; }
+    .venue {
+      font-size: 0.78rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+    .ptitle { font-size: 1.02rem; font-weight: 600; margin-bottom: 0.18rem; line-height: 1.42; }
+    .pauth { font-size: 0.89rem; color: #555; font-style: italic; margin-bottom: 0.38rem; line-height: 1.45; }
+    .pauth strong { font-style: normal; color: #111; }
+    .pdesc { font-size: 0.88rem; color: #555; margin-bottom: 0.42rem; line-height: 1.48; }
+    .ptags { font-size: 0.83rem; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .exp-row { padding: 1rem 0; border-bottom: 1px solid #eee; }
+    .exp-row:first-child { border-top: 1px solid #eee; }
+    .exp-hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.1rem;
+    }
+    .etitle { font-size: 1rem; font-weight: 600; }
+    .edate { font-size: 0.82rem; color: #888; }
+    .eorg { font-size: 0.9rem; color: #555; font-style: italic; margin-bottom: 0.45rem; }
+    .ebullets { list-style: none; font-size: 0.9rem; color: #444; }
+    .ebullets li { padding-left: 1rem; position: relative; margin-bottom: 0.14rem; }
+    .ebullets li::before { content: "–"; position: absolute; left: 0; color: #aaa; }
+
+    .education-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.92rem;
+    }
+    .education-row:first-child { border-top: 1px solid #eee; }
+    .degree { color: #555; font-style: italic; }
+    .school-date { color: #888; font-size: 0.82rem; white-space: nowrap; }
+
+    .ctable { border-collapse: collapse; font-size: 0.93rem; }
+    .ctable td { padding: 0.3rem 1.2rem 0.3rem 0; vertical-align: top; }
+    .ctable td:first-child {
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 0.42rem;
+      white-space: nowrap;
+    }
+
+    #foot {
+      margin-top: 2.5rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.6rem 1.15rem 3.5rem; }
+      #header { grid-template-columns: 1fr; gap: 1.1rem; }
+      #header img { width: 138px; height: 172px; }
+      .pub-row { grid-template-columns: 1fr; }
+      .pub-row img, .pub-thumb { max-width: 165px; }
+      .news-row { grid-template-columns: 78px 1fr; }
+      .education-row { grid-template-columns: 1fr; gap: 0.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="topnav">
+    <a href="#about">[About]</a>
+    <a href="#news">[News]</a>
+    <a href="#publications">[Publications]</a>
+    <a href="#experience">[Experience]</a>
+    <a href="#education">[Education]</a>
+    <a href="assets/Shekoufeh_Sadeghi_CV.pdf" target="_blank" rel="noopener">[CV]</a>
+    <a href="#contact">[Contact]</a>
+  </div>
+
+  <hr>
+
+  <div id="header">
+    <img src="assets/profile.jpeg" alt="Shekoufeh Sadeghi">
+    <div>
+      <h1>Shekoufeh Sadeghi</h1>
+      <p class="role">Ph.D. Candidate in Computer Science</p>
+
+      <p class="affil"><strong>Ph.D. Candidate / Research Project Assistant</strong><br>
+        <a href="https://droneslab.github.io/" target="_blank" rel="noopener">DRONES Lab</a>, University at Buffalo</p>
+
+      <p class="affil">Advised by <a href="https://dkkarthik.github.io/" target="_blank" rel="noopener">Prof. Karthik Dantu</a></p>
+
+      <p class="email">e-mail: <strong>shekoufe</strong> [at] <strong>buffalo.edu</strong></p>
+
+      <div class="hlinks">
+        <a href="https://scholar.google.com/citations?user=NCCK7doAAAAJ&hl=en" target="_blank" rel="noopener">[Google Scholar]</a>
+        <a href="https://github.com/cikufa" target="_blank" rel="noopener">[GitHub]</a>
+        <a href="https://www.linkedin.com/in/shekoufeh-sadeghi-45100a1ba/" target="_blank" rel="noopener">[LinkedIn]</a>
+        <a href="assets/Shekoufeh_Sadeghi_CV.pdf" target="_blank" rel="noopener">[CV]</a>
+        <a href="mailto:shekoufe@buffalo.edu">[Email]</a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a Ph.D. candidate in Computer Science at the University at Buffalo, working with Prof. Karthik Dantu in the <a href="https://droneslab.github.io/" target="_blank" rel="noopener">Distributed Robotics and Networked Embedded Sensing (DRONES) Lab</a>.</p>
+    <p>My research focuses on <strong>active perception and perception-aware planning for robotic autonomy</strong>. I am interested in how robots can actively control what and how they sense to improve downstream localization, planning, and manipulation, rather than treating perception as a fixed input stream.</p>
+    <p>My recent work studies online viewpoint optimization for motion-decoupled cameras, adaptive illumination for visual SLAM, and controlled photometric variation for robot vision. I am currently exploring task-aware active perception for long-horizon manipulation under partial observability, especially sensing actions that help satisfy the preconditions of downstream skills.</p>
+    <p>More broadly, I am interested in robot learning, 3D vision, visual localization, world models, and building perception-action loops that remain useful under real-world sensing constraints.</p>
+  </section>
+
+  <hr>
+
+  <section id="news">
+    <h2>News</h2>
+    <div class="news-row">
+      <span class="ndt">Sep 2026</span>
+      <span><strong>PIVOT preprint released</strong> — our work on continuous viewpoint optimization for motion-decoupled robotic sensors is now on arXiv and has been submitted to IEEE Robotics and Automation Letters (RA-L).</span>
+    </div>
+    <div class="news-row">
+      <span class="ndt">Sep 2026</span>
+      <span><strong>CLPV accepted</strong> — our controlled photometric-variation dataset was accepted to the IROS 2026 Workshop on Data in Field Robotics.</span>
+    </div>
+    <div class="news-row">
+      <span class="ndt">Feb 2026</span>
+      <span><strong>Lightning released on arXiv</strong> — adaptive illumination control for robot perception using relighting, offline scheduling, and imitation learning.</span>
+    </div>
+    <div class="news-row">
+      <span class="ndt">Oct 2025</span>
+      <span><strong>Journal paper published in Frontiers in Robotics and AI</strong> — clinician-informed design considerations for socially assistive robots in speech-language therapy.</span>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="publications">
+    <h2>Selected Publications &amp; Projects</h2>
+
+    <div class="pub-row">
+      <img src="https://raw.githubusercontent.com/droneslab/PIVOT/main/static/images/overview.png" alt="PIVOT method overview">
+      <div>
+        <div class="venue">arXiv 2026 · Submitted to RA-L</div>
+        <div class="ptitle">PIVOT: Perception-aware Independent Viewpoint Online Optimization</div>
+        <div class="pauth">Yuyang Chen*, <strong>Shekoufeh Sadeghi*</strong>, Charuvahan Adhivarahan, Elton Lemos, Chen Wang, Sanjeev J. Koppal, Karthik Dantu</div>
+        <div class="pdesc">Online optimization of sensor viewing direction along a fixed robot trajectory, with continuous on-manifold updates and validation in simulation and on Boston Dynamics Spot.</div>
+        <div class="ptags">
+          <a href="https://arxiv.org/abs/2609.19510" target="_blank" rel="noopener">[Paper]</a>
+          <a href="https://droneslab.github.io/PIVOT/" target="_blank" rel="noopener">[Project]</a>
+          <a href="https://github.com/droneslab/PIVOT" target="_blank" rel="noopener">[Code]</a>
+          <a href="https://youtu.be/IWPBh4lygTE" target="_blank" rel="noopener">[Video]</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img src="https://raw.githubusercontent.com/droneslab/LGTN/main/static/images/lighting-intro-web2.png" alt="Lightning adaptive illumination overview">
+      <div>
+        <div class="venue">arXiv 2026</div>
+        <div class="ptitle">Adaptive Illumination Control for Robot Perception</div>
+        <div class="pauth">Yash Turkar, <strong>Shekoufeh Sadeghi</strong>, Karthik Dantu</div>
+        <div class="pdesc">A closed-loop illumination-control framework for visual SLAM that combines learned relighting, offline intensity scheduling, and imitation learning for real-time light control.</div>
+        <div class="ptags">
+          <a href="https://arxiv.org/abs/2602.15900" target="_blank" rel="noopener">[Paper]</a>
+          <a href="https://droneslab.github.io/LGTN/" target="_blank" rel="noopener">[Project]</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <img src="https://raw.githubusercontent.com/droneslab/CLPV/main/static/images/photometric_cube.png" alt="CLPV controlled photometric sweep">
+      <div>
+        <div class="venue">IROS 2026 · Workshop on Data in Field Robotics · Accepted</div>
+        <div class="ptitle">CLPV: Dataset of Controlled Co-Located Lighting and Photometric Variation for Robot Vision</div>
+        <div class="pauth">Yash Turkar, <strong>Shekoufeh Sadeghi</strong>, Shouvik Das, Karthik Dantu</div>
+        <div class="pdesc">A controlled dataset and capture platform that varies exposure, gain, and active illumination while preserving scene geometry or repeated robot routes.</div>
+        <div class="ptags">
+          <a href="https://droneslab.github.io/CLPV/" target="_blank" rel="noopener">[Project]</a>
+          <a href="https://droneslab.github.io/CLPV/static/paper/clpv_dfr_2026.pdf" target="_blank" rel="noopener">[Paper]</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-thumb text-thumb" aria-label="Socially Assistive Robotics publication thumbnail">
+        <span>SAR</span>
+        <small>Clinical co-design<br>for robot assistance</small>
+      </div>
+      <div>
+        <div class="venue">Frontiers in Robotics and AI · 2025</div>
+        <div class="ptitle">Designing Socially Assistive Robots for Clinical Practice: Insights from an Asynchronous Remote Community of Speech-Language Pathologists</div>
+        <div class="pauth">Denielle Oliva, Abbie Olszewski, <strong>Shekoufeh Sadeghi</strong>, Karthik Dantu, David Feil-Seifer</div>
+        <div class="pdesc">A four-week clinician co-design study identifying communication, customization, role, ethics, and personalization requirements for socially assistive robots in speech-language therapy.</div>
+        <div class="ptags">
+          <a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1646880/full" target="_blank" rel="noopener">[Paper]</a>
+          <a href="https://doi.org/10.3389/frobt.2025.1646880" target="_blank" rel="noopener">[DOI]</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="exp-row">
+      <div class="exp-hd">
+        <span class="etitle">Research Project Assistant / Graduate Researcher</span>
+        <span class="edate">2023 – Present</span>
+      </div>
+      <div class="eorg">University at Buffalo — DRONES Lab</div>
+      <ul class="ebullets">
+        <li>Develop active-perception methods that optimize sensing actions for downstream localization, planning, and robot autonomy.</li>
+        <li>Build simulation and real-robot pipelines using ROS/ROS2, C++/Python, COLMAP, Unreal/Isaac simulation, and Boston Dynamics Spot.</li>
+        <li>Research current directions in task-aware active perception for manipulation under partial observability.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-hd">
+        <span class="etitle">Teaching Assistant — CSE 4/568 Robotics Algorithms</span>
+        <span class="edate">2026</span>
+      </div>
+      <div class="eorg">University at Buffalo</div>
+      <ul class="ebullets">
+        <li>Support ROS2 and mobile-robot programming activities, course assignments, grading, and office hours.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-hd">
+        <span class="etitle">Research Intern — GameGAN Reimplementation and Improvement</span>
+        <span class="edate">Jul 2021 – Dec 2021</span>
+      </div>
+      <div class="eorg">Institute for Research in Fundamental Sciences (IPM), Tehran</div>
+      <ul class="ebullets">
+        <li>Reimplemented a GameGAN data pipeline and model, modified network/input architecture, and debugged legacy Gym and CMake dependencies.</li>
+      </ul>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-hd">
+        <span class="etitle">Lead Teaching Assistant</span>
+        <span class="edate">2021 – 2022</span>
+      </div>
+      <div class="eorg">K.N. Toosi University of Technology</div>
+      <ul class="ebullets">
+        <li>Led lab/workshop instruction and grading for Fundamentals of Computer Vision and Embedded System Design.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-row">
+      <div><strong>University at Buffalo, SUNY</strong><br><span class="degree">Ph.D. in Computer Science · Advisor: Prof. Karthik Dantu</span></div>
+      <div class="school-date">2023 – Present</div>
+    </div>
+    <div class="education-row">
+      <div><strong>K.N. Toosi University of Technology</strong><br><span class="degree">B.Sc. in Computer Engineering</span></div>
+      <div class="school-date">2017 – 2022</div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <table class="ctable">
+      <tr><td>Email</td><td><a href="mailto:shekoufe@buffalo.edu">shekoufe@buffalo.edu</a></td></tr>
+      <tr><td>Scholar</td><td><a href="https://scholar.google.com/citations?user=NCCK7doAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></td></tr>
+      <tr><td>GitHub</td><td><a href="https://github.com/cikufa" target="_blank" rel="noopener">github.com/cikufa</a></td></tr>
+      <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/in/shekoufeh-sadeghi-45100a1ba/" target="_blank" rel="noopener">shekoufeh-sadeghi</a></td></tr>
+      <tr><td>Location</td><td>Buffalo, New York</td></tr>
+    </table>
+  </section>
+
+  <div id="foot">Shekoufeh Sadeghi · University at Buffalo · 2026</div>
+
+</body>
+</html>
